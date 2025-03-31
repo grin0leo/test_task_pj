@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tele2</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+
+
+<header>
+  <img aria-hidden="true" src="/header/Logo.svg" alt="Логотип">
+
+
+  <div class="header__user-city">
+    <img src="/header/Location.svg" alt="">
+    <button aria-label="Выбрать город" class="header__user-city_button">
+      Ростов-на-Дону
+    </button>
+  </div>
+
+
+</header>
+
+<body>
+
+
+
+
+  <main>
+
+
+    <!-- OFFER  -->
+    <section class="offer">
+      <div class="offer__main-info">
+        <p class="offer__date">Акция продлится с 1 по 20 сентября</p>
+
+        <div class="offer__promo-block">
+
+          <h1 class="offer__title">
+            <span class="offer__title-main">ЭТО ВАША</span>
+            <span class="offer__title-accent">ВЫГОДА!</span>
+          </h1>
+          <p class="offer__description">
+            Тариф «Мой онлайн+» и 1 ТБ трафика в подарок для новых абонентов
+          </p>
+        </div>
+
+        <button class='base-button base-button_wide' aria-label="Принять участие в акции">Принять участие!</button>
+      </div>
+      <img src="/offer/Boss.png" aria-hidden="true" alt="Мужчина, амбассадор Tele2">
+    </section>
+
+
+
+
+    <!-- TARIFF -->
+    <section class="tariff">
+      <div class="tariff__promo">
+        <h1>Один терабайт — много любимых развлечений</h1>
+        <p>Подарок получают только новые абоненты при подключении услуг Tele2 с тарифом «Мой онлайн+». Трафик
+          расходуется в течение года.</p>
+      </div>
+
+      <ul class="tariff__list">
+
+        <li class="tariff__item">
+          <div class="tariff__icon"><img src="/tariff/video.svg" aria-hidden="true" alt="Иконка видео"></div>
+          Около 500 часов видео
+        </li>
+
+        <li class="tariff__item">
+          <div class="tariff__icon"><img src="/tariff/music.svg" aria-hidden="true" alt="Иконка музыки"></div>
+          Примерно 200 000 песен
+        </li>
+
+        <li class="tariff__item">
+          <div class="tariff__icon"><img src="/tariff/photo.svg" aria-hidden="true" alt="Иконка фото"></div>
+          Порядка 300000 фото
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- Форма для отправки номера при адаптиве использовать flex-dir: colum-reverse -->
+    <!-- Промоакция -->
+    <section class="promo">
+
+      <h1 class="promo__label">Несколько шагов и 1 ТБ — ваш</h1>
+
+      <!-- сама форма и все что ее касается  -->
+      <form class="promo__number-form" id="promo-form">
+        <label for="phone"></label>
+        <input type="tel" name="phone" id="phone" placeholder="+7 (___) ___-__-__" required>
+
+        <label>
+          <input type="checkbox" required>
+          Даю согласие на обработку пресональных данных. <a href="">Условия соглашения.</a>
+        </label>
+
+        <button class='base-button' type="submit">Выслать промокод</button>
+
+        <p class="promo__message" id="promo-success-message" aria-live="polite" hidden>
+          <img src="" alt="Success">
+          Промокод выслан на ваш номер
+        </p>
+
+        <p class="promo__error-message" id="promo-error-message" aria-live="polite" hidden>
+          <img src="" alt="Error">
+          На один и тот же номер можно отправить только один промокод
+        </p>
+
+        <!-- добавить сюда блок, когда нажали кнопку -->
+
+      </form>
+
+      <ol class="promo-steps-list">
+        <li>
+          <!-- как можно семантично названить блок с числом -->
+          <span>1</span>
+          Ведите свой номер телефона, затем дождитесь смс с промокодом для получения Тб
+        </li>
+
+        <li>
+          <span>2</span>
+          Перейдите на сайт Tele2 и активируйте промокод при подключении на тариф «Мой Онлайн+»
+        </li>
+
+        <li>
+          <span>3</span>
+          Используйте свой подарочный ТБ от Tele2 в течение всего года
+        </li>
+      </ol>
+
+
+
+
+
+    </section>
+
+
+    <!-- Ссылка на сайт -->
+    <section>
+
+      <h1>Заходите на сайт Tele2</h1>
+      <p>Перейдите в магазин, оформите тариф «Мой онлайн+» и на страничке активации введите ваш промокод. Готово!</p>
+
+      <button class='base-button' aria-label="Перейти в магазин и оформить тариф «Мой онлайн+»">
+        <a href="https://rostov.tele2.ru">Оформить тариф</a>
+      </button>
+
+      <img src="" aria-hidden="true" alt="">
+
+    </section>
+
+
+    <!--Shadow overlay + dialog window  -->
+    <div id="overlay" class="shadow-overlay" role="presentation"></div>
+
+    <dialog id="location-confirm-modal" class="modal">
+      <p>Ваш регион Санкт-Петербург?</p>
+      <div class="modal__buttons">
+        <button id="confirm-btn" class="modal__button modal__button--confirm">Да, верно</button>
+        <button id="change-btn" class="modal__button modal__button--change">Изменить регион</button>
+      </div>
+    </dialog>
+    <!--  -->
+
+    <!-- change city -->
+    <!-- написать в js массив с городами и с помощью map сгенерировать много кнопок -->
+    <dialog id="change-location-modal" class="change-location">
+      <h1>Выберите город</h1>
+
+
+    </dialog>
+    <!--  -->
+
+
+  </main>
+
+  <footer>
+
+    <!-- разделительная полоска и два блока -->
+
+  </footer>
+
+  <!-- <div id="app"></div> -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
