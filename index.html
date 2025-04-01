@@ -17,14 +17,26 @@
   <img aria-hidden="true" src="/header/Logo.svg" alt="Логотип">
 
 
-  <div class="header__user-city">
+  <div class="header__location">
     <img src="/header/Location.svg" alt="">
-    <button aria-label="Выбрать город" class="header__user-city_button">
-      Ростов-на-Дону
+    <!-- исрпавить доступность -->
+    <button aria-label="Выбрать город" class="header__location-button" id="change-location-button">
+      <span id="selected-city">Ростов-на-Дону</span>
     </button>
+
+    <!--Shadow overlay + dialog window  -->
+    <div id="overlay" class="shadow-overlay" role="presentation"></div>
+    <!-- DIALOG CONFIRM LOCATION -->
+    <template>
+      <dialog id="location-confirm-modal" class="modal">
+        <p class="modal__label">Ваш регион Ростов-на-Дону?</p>
+        <div class="modal__buttons">
+          <button id="confirm-location-button" class="modal__button modal__button--confirm">Да, верно</button>
+          <button id="modal-change-location-button" class="modal__button modal__button--change">Изменить регион</button>
+        </div>
+      </dialog>
+    </template>
   </div>
-
-
 </header>
 
 <body>
@@ -53,7 +65,10 @@
 
         <button class='base-button base-button_wide' aria-label="Принять участие в акции">Принять участие!</button>
       </div>
-      <img src="/offer/Boss.png" aria-hidden="true" alt="Мужчина, амбассадор Tele2">
+      <img src="/offer/Boss.png" srcset="/offer/BossMobile.png 316w, /offer/Boss.png 584w"
+        sizes="(max-width: 768px) 316px, 584px" loading="lazy" aria-hidden="true" alt="Мужчина, амбассадор Tele2">
+
+
     </section>
 
 
@@ -161,25 +176,20 @@
     </section>
 
 
-    <!--Shadow overlay + dialog window  -->
-    <div id="overlay" class="shadow-overlay" role="presentation"></div>
 
-    <dialog id="location-confirm-modal" class="modal">
-      <p>Ваш регион Санкт-Петербург?</p>
-      <div class="modal__buttons">
-        <button id="confirm-btn" class="modal__button modal__button--confirm">Да, верно</button>
-        <button id="change-btn" class="modal__button modal__button--change">Изменить регион</button>
-      </div>
-    </dialog>
+
     <!--  -->
 
-    <!-- change city -->
+    <!-- change city modal -->
     <!-- написать в js массив с городами и с помощью map сгенерировать много кнопок -->
-    <dialog id="change-location-modal" class="change-location">
-      <h1>Выберите город</h1>
+    <template id="city-modal-template">
+      <dialog id="change-location-modal" class="change-location-modal">
+        <h1 class="change-location-modal__title">Выберите город</h1>
+        <div id="city-list" class="change-location-modal__list"></div>
 
+      </dialog>
+    </template>
 
-    </dialog>
     <!--  -->
 
 
