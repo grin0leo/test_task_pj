@@ -18,12 +18,8 @@
   <link rel="stylesheet" href="/src/styles/promo.css">
   <link rel="stylesheet" href="/src/styles/website.css">
   <link rel="stylesheet" href="/src/styles/footer.css">
-
-
-
-
-
-
+  <link rel="stylesheet" href="/src/styles/modalCofirm.css">
+  <link rel="stylesheet" href="/src/styles/modalChange.css">
 
 </head>
 
@@ -119,32 +115,40 @@
     </section>
 
 
-    <!-- Форма для отправки номера при адаптиве использовать flex-dir: colum-reverse -->
+
     <!-- Промоакция -->
     <section class="promo">
 
       <!-- сама форма и все что ее касается  -->
       <form class="promo__number-form" id="promo-form">
         <h1 class="promo__label">Несколько шагов <span class="promo__label_accent">и 1 ТБ — ваш</span></h1>
-        <label for="phone">Номер телефона</label>
+        <label for="phone" class="promo__phone-label">Номер телефона</label>
         <input type="tel" name="phone" id="phone" class="promo__number-input" placeholder="+7 (___) ___-__-__" required>
 
-        <label>
-          <input type="checkbox" required>
-          Даю согласие на обработку пресональных данных. <a class="promo__link" href="">Условия соглашения.</a>
+        <label class="promo__checkbox">
+          <input type="checkbox" class="promo__checkbox-input" required>
+          <span class="promo__checkbox-custom"></span>
+          <span class="promo__checkbox-text">
+            Даю согласие на обработку персональных данных.
+            <a class="promo__link" href="https://s3.t2.ru/ds-site/docs/terms/usloviya-okazaniya-uslug-svyazi.pdf">
+              Условия соглашения.
+            </a>
+          </span>
+
+
+          <p class="promo__message" id="promo-success-message" aria-live="polite" hidden>
+            <img src="/promo/statusOK.svg" alt="Success">
+            Промокод выслан на ваш номер
+          </p>
+          <div class="promo__message promo__error-message" id="promo-error-message" role="status" aria-live="polite"
+            hidden>
+            <img src="/promo/statusError.svg" alt="Ошибка:">
+            <span>На один и тот же номер можно отправить только один промокод</span>
+          </div>
         </label>
 
-        <button class='base-button' type="submit">Выслать промокод</button>
+        <button class='base-button promo__button' type="submit">Выслать промокод</button>
 
-        <p class="promo__message" id="promo-success-message" aria-live="polite" hidden>
-          <img src="" alt="Success">
-          Промокод выслан на ваш номер
-        </p>
-
-        <p class="promo__error-message" id="promo-error-message" aria-live="polite" hidden>
-          <img src="" alt="Error">
-          На один и тот же номер можно отправить только один промокод
-        </p>
 
       </form>
 
@@ -216,12 +220,11 @@
       </div>
 
       <div class="footer__terms">
-        <p class="footer__">Полные условия акции</p>
+        <p class="footer__terms-item">Полные условия акции</p>
         <img src="/footer/16.svg" alt="">
       </div>
     </div>
 
-    <!-- разделительная полоска и два блока -->
     <hr class="footer__line">
 
     <div class="footer__container">

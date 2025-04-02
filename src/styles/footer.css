@@ -32,6 +32,13 @@
     display: flex;
     align-items: center;
     gap: 12px;
+
+
+}
+
+.footer__terms-item {
+    font-size: 13px;
+    color: white;
 }
 
 .footer__lower-container {
