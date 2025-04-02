@@ -5,7 +5,11 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Tele2</title>
+  <meta name="description" content="Tele2 - современные тарифы и услуги связи">
+  <meta name="keywords" content="Tele2, тарифы, мобильная связь, интернет, промоакция">
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +24,17 @@
   <link rel="stylesheet" href="/src/styles/footer.css">
   <link rel="stylesheet" href="/src/styles/modalCofirm.css">
   <link rel="stylesheet" href="/src/styles/modalChange.css">
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Демо-макет Tele2",
+      "url": "https://tele2-demo",
+      "description": "Тестовое задание: промо-страница Tele2."
+    }
+    </script>
 
 </head>
 
@@ -62,9 +77,7 @@
     <section class="offer">
       <div class="offer__main-info">
         <p class="offer__date">Акция продлится с 1 по 20 сентября</p>
-
         <div class="offer__promo-block">
-
           <h1 class="offer__title">
             <span class="offer__title-main">ЭТО ВАША</span>
             <span class="offer__title-accent">ВЫГОДА!</span>
@@ -73,13 +86,11 @@
             Тариф «Мой онлайн+» и 1 ТБ трафика в подарок для новых абонентов
           </p>
         </div>
-
-        <button class='base-button base-button_wide' aria-label="Принять участие в акции">Принять участие!</button>
+        <button id="scroll-button" class='base-button base-button_wide'
+          aria-label="Принять участие в акции и перейти к заполнению формы">Принять участие!</button>
       </div>
       <img src="/offer/Boss.png" srcset="/offer/BossMobile.png 316w, /offer/Boss.png 584w"
         sizes="(max-width: 768px) 316px, 584px" loading="lazy" aria-hidden="true" alt="Мужчина, амбассадор Tele2">
-
-
     </section>
 
 
@@ -114,12 +125,8 @@
 
     </section>
 
-
-
-    <!-- Промоакция -->
-    <section class="promo">
-
-      <!-- сама форма и все что ее касается  -->
+    <!-- PROMO -->
+    <section class="promo" id="form-section">
       <form class="promo__number-form" id="promo-form">
         <h1 class="promo__label">Несколько шагов <span class="promo__label_accent">и 1 ТБ — ваш</span></h1>
         <label for="phone" class="promo__phone-label">Номер телефона</label>
@@ -147,30 +154,23 @@
             <span>На один и тот же номер можно отправить только один промокод</span>
           </div>
         </label>
-
         <button class='base-button promo__button' type="submit">Выслать промокод</button>
-
-
       </form>
 
       <ol class="promo__steps-list">
         <li class="promo__item">
-          <!-- как можно семантично названить блок с числом -->
           <div class="promo__step">1</div>
           Ведите свой номер телефона, затем дождитесь смс с промокодом для получения Тб
         </li>
-
         <li class="promo__item">
           <div class="promo__step">2</div>
           Перейдите на сайт Tele2 и активируйте промокод при подключении на тариф «Мой Онлайн+»
         </li>
-
         <li class="promo__item">
           <div class="promo__step">3</div>
           Используйте свой подарочный ТБ от Tele2 в течение всего года
         </li>
       </ol>
-
       <h1 class="promo__label-mobile">Оставь номер <span class="promo__label_accent">и 1 ТБ — ваш</span></h1>
 
 
@@ -187,24 +187,18 @@
           вы получите 1 ТБ  на ваш телефон при подключении тарифа «Мой онлайн+».</p>
         <img class="website__image-mobile" src="/Tele2Website/PhoneMobile.svg" aria-hidden="true"
           alt="Смартфон с SIM-картой Tele2 и тарифом 1 ТБ интернета">
-
         <button class='base-button website__button' onclick="window.location.href='https://rostov.tele2.ru';"
           aria-label="Перейти в магазин и оформить тариф «Мой онлайн+»">
           Оформить тариф
         </button>
-
       </div>
       <img class="website__image-desktop" src=" /Tele2Website/Phone.svg" loading="lazy" aria-hidden="true"
         alt="Смартфон с SIM-картой Tele2 и тарифом 1 ТБ интернета">
     </section>
 
 
-    <!-- button  -->
+    <!-- button back-to-top -->
     <button class="back-to-top" aria-label="Вернуться к началу страницы">⇧</button>
-
-
-
-
     <!-- CITY MODAL -->
     <template id="city-modal-template">
       <dialog id="change-location-modal" class="change-location-modal">
@@ -215,7 +209,6 @@
       </dialog>
     </template>
 
-    <!--  -->
   </main>
 
   <!-- FOOTER -->
@@ -226,7 +219,6 @@
         <img src="/footer/VK.svg" alt="" loading="lazy">
         <img src="/footer/Facebook.svg" alt="" loading="lazy">
       </div>
-
       <div class="footer__terms">
         <p class="footer__terms-item">Полные условия акции</p>
         <img src="/footer/16.svg" alt="">
@@ -240,16 +232,13 @@
         <img src="/footer/Logo.svg" alt="Tele2">
         <p class="footer__company">© Tele2 Россия, 2021</p>
       </div>
-
       <div class="footer__lower-container footer__lower-container_right">
         <p class="footer__dev">Сделано в Студии Олега Чулакова</p>
         <img src="/footer/chulakov.svg" alt="Студия Олега Чулакова">
       </div>
     </div>
-
   </footer>
 
-  <!-- <div id="app"></div> -->
   <script type="module" src="/src/main.js"></script>
 </body>
 

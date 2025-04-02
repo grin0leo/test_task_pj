@@ -46,7 +46,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 485px) {
     .offer {
         flex-direction: column;
         margin-top: 50px;
