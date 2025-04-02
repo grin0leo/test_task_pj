@@ -78,6 +78,10 @@
     font-size: 13px;
 }
 
+.promo__label-mobile {
+    display: none;
+}
+
 .promo__number-input {
     background-color: rgba(0, 0, 0, 0);
     border: none;
@@ -132,6 +136,8 @@
     display: flex;
     align-items: center;
     gap: 24px;
+
+    font-size: 20px;
 }
 
 
@@ -151,6 +157,28 @@
 
 
 @media (max-width: 768px) {
+    .promo {
+        flex-direction: column-reverse;
+    }
+
+    .promo__label {
+        display: none;
+    }
+
+    .promo__label-mobile {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .promo__steps-list {
+        margin-bottom: 20px;
+    }
+
+    .promo__step {
+        font-size: 24px;
+        min-width: 52px;
+        min-height: 52px;
+    }
 
     .promo__message {
         top: 270%;
@@ -167,5 +195,16 @@
     .promo__message {
         padding-right: 15px;
 
+    }
+
+    .promo__steps-list {
+        gap: 30px;
+    }
+
+    .promo__item {
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+        font-size: 18px;
     }
 }
