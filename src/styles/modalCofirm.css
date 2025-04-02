@@ -1,0 +1,59 @@
+/* Confirm section */
+.shadow-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+.modal {
+    position: fixed;
+    top: 30px;
+    left: 96%;
+    margin: 0%;
+    transform: translate(-100%, 0);
+    width: 297px;
+    height: 131px;
+    background: url('/modal/dialog.svg') no-repeat center/contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    border: none;
+    padding: 20px;
+    z-index: 1001;
+}
+
+.modal__label {
+    font-family: var(--base-font);
+    font-size: 18px;
+
+}
+
+.modal__button {
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: ease-in-out 300ms;
+}
+
+.modal__button:hover {
+    scale: 1.05;
+    transition: ease-in-out 300ms;
+}
+
+.modal__button--change {
+    border: none;
+}
+
+.modal__button--confirm {
+    border: solid 2px var(--main-bg-color);
+    border-radius: 30px;
+    padding: 9px 19px;
+    font-weight: 700;
+}
