@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Tele2</title>
+  <meta name="description" content="Tele2 - современные тарифы и услуги связи">
+  <meta name="keywords" content="Tele2, тарифы, мобильная связь, интернет, промоакция">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Демо-макет Tele2",
+      "url": "https://tele2-demo",
+      "description": "Тестовое задание: промо-страница Tele2."
+    }
+    </script>
+
+  <script type="module" crossorigin src="/test_task_pj/assets/index-jBf_YiHQ.js"></script>
+  <link rel="stylesheet" crossorigin href="/test_task_pj/assets/index-CJR9dcda.css">
+</head>
+
+
+<header>
+  <img aria-hidden="true" src="/test_task_pj/header/Logo.svg" alt="Логотип">
+
+
+  <div class="header__location">
+    <img src="/test_task_pj/header/Location.svg" alt="">
+    <!-- исрпавить доступность -->
+    <button aria-label="Открыть окно выбора города" class="header__location-button" id="change-location-button">
+      <span id="selected-city">Ростов-на-Дону</span>
+    </button>
+
+    <!--Shadow overlay + dialog window  -->
+    <div id="overlay" class="shadow-overlay" role="presentation"></div>
+    <!-- DIALOG CONFIRM LOCATION -->
+    <template>
+      <dialog id="location-confirm-modal" class="modal">
+        <p class="modal__label">Ваш регион Ростов-на-Дону?</p>
+        <div class="modal__buttons">
+          <button id="confirm-location-button" class="modal__button modal__button--confirm">Да, верно</button>
+          <button id="modal-change-location-button" class="modal__button modal__button--change">Изменить регион</button>
+        </div>
+      </dialog>
+    </template>
+  </div>
+</header>
+
+<body>
+
+
+
+
+  <main>
+
+
+    <!-- OFFER  -->
+    <section class="offer">
+      <div class="offer__main-info">
+        <p class="offer__date">Акция продлится с 1 по 20 сентября</p>
+        <div class="offer__promo-block">
+          <h1 class="offer__title">
+            <span class="offer__title-main">ЭТО ВАША</span>
+            <span class="offer__title-accent">ВЫГОДА!</span>
+          </h1>
+          <p class="offer__description">
+            Тариф «Мой онлайн+» и 1 ТБ трафика в подарок для новых абонентов
+          </p>
+        </div>
+        <button id="scroll-button" class='base-button base-button_wide'
+          aria-label="Принять участие в акции и перейти к заполнению формы">Принять участие!</button>
+      </div>
+      <img src="/test_task_pj/offer/Boss.png" srcset="/test_task_pj/offer/BossMobile.png 316w, /test_task_pj/offer/Boss.png 584w"
+        sizes="(max-width: 768px) 316px, 584px" loading="lazy" aria-hidden="true" alt="Мужчина, амбассадор Tele2">
+    </section>
+
+
+
+
+    <!-- TARIFF -->
+    <section class="tariff">
+      <div class="tariff__promo">
+        <h1>Один терабайт — много любимых развлечений</h1>
+        <p>Подарок получают только новые абоненты при подключении услуг Tele2 с тарифом «Мой онлайн+». Трафик
+          расходуется в течение года.</p>
+      </div>
+
+      <ul class="tariff__list">
+
+        <li class="tariff__item">
+          <div class="tariff__icon"><img src="/test_task_pj/tariff/video.svg" aria-hidden="true" alt="Иконка видео"></div>
+          Около 500 часов видео
+        </li>
+
+        <li class="tariff__item">
+          <div class="tariff__icon"><img src="/test_task_pj/tariff/music.svg" aria-hidden="true" alt="Иконка музыки"></div>
+          Примерно 200 000 песен
+        </li>
+
+        <li class="tariff__item">
+          <div class="tariff__icon"><img src="/test_task_pj/tariff/photo.svg" aria-hidden="true" alt="Иконка фото"></div>
+          Порядка 300000 фото
+        </li>
+
+      </ul>
+
+    </section>
+
+    <!-- PROMO -->
+    <section class="promo" id="form-section">
+      <form class="promo__number-form" id="promo-form">
+        <h1 class="promo__label">Несколько шагов <span class="promo__label_accent">и 1 ТБ — ваш</span></h1>
+        <div class="promo__input-group">
+          <label for="phone" class="promo__phone-label">Номер телефона</label>
+          <input type="tel" name="phone" id="phone" class="promo__number-input" placeholder="+7 (___) ___-__-__"
+            required>
+        </div>
+
+        <label class="promo__checkbox">
+          <input type="checkbox" class="promo__checkbox-input" required>
+          <span class="promo__checkbox-custom"></span>
+          <span class="promo__checkbox-text">
+            Даю согласие на обработку персональных данных.
+            <a class="promo__link" href="https://s3.t2.ru/ds-site/docs/terms/usloviya-okazaniya-uslug-svyazi.pdf">
+              Условия соглашения.
+            </a>
+          </span>
+
+
+          <div class="promo__message" id="promo-success-message" aria-live="polite" hidden>
+            <img src="/test_task_pj/promo/statusOK.svg" alt="Success">
+            <span>Промокод выслан на ваш номер</span>
+          </div>
+
+          <div class="promo__message promo__error-message" id="promo-error-message" role="status" aria-live="polite"
+            hidden>
+            <img src="/test_task_pj/promo/statusError.svg" alt="Ошибка:">
+            <span>На один и тот же номер можно отправить только один промокод</span>
+          </div>
+
+          <div class="promo__message promo__error-message" id="promo-error-message-valid" role="status"
+            aria-live="polite" hidden>
+            <img src="/test_task_pj/promo/statusError.svg" alt="Ошибка:">
+            <span>Номер введен некорректно</span>
+          </div>
+
+        </label>
+        <button class='base-button promo__button' type="submit">Выслать промокод</button>
+      </form>
+
+      <ol class="promo__steps-list">
+        <li class="promo__item">
+          <div class="promo__step">1</div>
+          Ведите свой номер телефона, затем дождитесь смс с промокодом для получения Тб
+        </li>
+        <li class="promo__item">
+          <div class="promo__step">2</div>
+          Перейдите на сайт Tele2 и активируйте промокод при подключении на тариф «Мой Онлайн+»
+        </li>
+        <li class="promo__item">
+          <div class="promo__step">3</div>
+          Используйте свой подарочный ТБ от Tele2 в течение всего года
+        </li>
+      </ol>
+      <h1 class="promo__label-mobile">Оставь номер <span class="promo__label_accent">и 1 ТБ — ваш</span></h1>
+
+
+    </section>
+
+
+    <!-- WEBSITE  -->
+    <section class="website">
+      <div class="website__main-info">
+        <h1 class="website__label">Заходите на сайт Tele2</h1>
+        <p class="website__text-desktop">Перейдите в магазин, оформите тариф «Мой онлайн+» и на страничке активации
+          введите ваш промокод. Готово!</p>
+        <p class="website__text-mobile">Перейдите в магазин на страничку активации, введите ваш промокод. Готово! Теперь
+          вы получите 1 ТБ  на ваш телефон при подключении тарифа «Мой онлайн+».</p>
+        <img class="website__image-mobile" src="/test_task_pj/Tele2Website/PhoneMobile.svg" aria-hidden="true"
+          alt="Смартфон с SIM-картой Tele2 и тарифом 1 ТБ интернета">
+        <button class='base-button website__button' onclick="window.location.href='https://rostov.tele2.ru';"
+          aria-label="Перейти в магазин и оформить тариф «Мой онлайн+»">
+          Оформить тариф
+        </button>
+      </div>
+      <img class="website__image-tablet" src="/test_task_pj/Tele2Website/PhoneMobile.svg" aria-hidden="true">
+      <img class="website__image-desktop" src=" /Tele2Website/Phone.svg" loading="lazy" aria-hidden="true"
+        alt="Смартфон с SIM-картой Tele2 и тарифом 1 ТБ интернета">
+    </section>
+
+
+    <!-- button back-to-top -->
+    <button class="back-to-top" aria-label="Вернуться к началу страницы">⇧</button>
+    <!-- CITY MODAL -->
+    <template id="city-modal-template">
+      <dialog id="change-location-modal" class="change-location-modal">
+        <div class="change-location-modal__main-info">
+          <h1 class="change-location-modal__title">Выберите город</h1>
+          <div id="city-list" class="change-location-modal__list"></div>
+        </div>
+      </dialog>
+    </template>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__social">
+        <img src="/test_task_pj/footer/Twitter.svg" alt="" loading="lazy">
+        <img src="/test_task_pj/footer/VK.svg" alt="" loading="lazy">
+        <img src="/test_task_pj/footer/Facebook.svg" alt="" loading="lazy">
+      </div>
+      <div class="footer__terms">
+        <p class="footer__terms-item">Полные условия акции</p>
+        <img src="/test_task_pj/footer/16.svg" alt="">
+      </div>
+    </div>
+
+    <hr class="footer__line">
+
+    <div class="footer__container footer__container_mobile">
+      <div class="footer__lower-container">
+        <img src="/test_task_pj/footer/Logo.svg" alt="Tele2">
+        <p class="footer__company">© Tele2 Россия, 2021</p>
+      </div>
+      <div class="footer__lower-container footer__lower-container_right">
+        <p class="footer__dev">Сделано в Студии Олега Чулакова</p>
+        <img src="/test_task_pj/footer/chulakov.svg" alt="Студия Олега Чулакова">
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
