@@ -5,22 +5,34 @@ import { isValidPhoneNumber } from "./validationNumber.js";
 //TODO добавить ошибку валидации 
 export function setupFormHandler() {
     const phoneInput = document.getElementById("phone");
-    const phoneNumber = phoneInput.value;
     const form = document.getElementById("promo-form");
     const message = document.getElementById("promo-success-message");
     const errorMessage = document.getElementById("promo-error-message");
 
+
+    message.style.display = "none";
+    errorMessage.style.display = "none";
+
     phoneMask(phoneInput);
+
+    // таймеры
+    let messageTimer, errorTimer;
 
 
     //при нажатии кнопки отправить 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        clearTimeout(messageTimer);
+        clearTimeout(errorTimer);
+
+        const phoneNumber = phoneInput.value;
+
         // проверка на валидацию 
         if (!isValidPhoneNumber(phoneInput.value)) {
             phoneInput.classList.add("error");
-            // errorMessage.hidden = false;
+            errorMessage.style.display = "flex";
+            message.style.display = "none";
             return;
         }
 
@@ -32,7 +44,13 @@ export function setupFormHandler() {
 
         if (usedPhoneNumbers.includes(phoneNumber)) {
             phoneInput.classList.add("error");
-            errorMessage.hidden = false;
+            errorMessage.style.display = "flex";
+            message.style.display = "none";
+
+            errorTimer = setTimeout(() => {
+                errorMessage.style.display = "none";
+            }, 3000);
+
             return;
         }
 
@@ -41,11 +59,11 @@ export function setupFormHandler() {
         localStorage.setItem("usedPhoneNumbers", JSON.stringify(usedPhoneNumbers));
 
 
-        errorMessage.hidden = true;
-        message.hidden = false;
+        errorMessage.style.display = "none";
+        message.style.display = "flex";
 
-        // setTimeout(() => {
-        //     message.hidden = true;
-        // }, 3000);
+        messageTimer = setTimeout(() => {
+            message.style.display = "none";
+        }, 3000);
     });
 }
