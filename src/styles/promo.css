@@ -1,0 +1,87 @@
+/* PROMO*/
+.promo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.promo__label {
+    margin-bottom: 64px;
+}
+
+.promo__link {
+    color: white;
+    text-decoration: underline;
+}
+
+.promo__number-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+
+}
+
+.promo__label_accent {
+    color: var(--sky-color);
+}
+
+.promo__number-input {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: white;
+    border-bottom: 1px solid;
+    padding-right: 5%;
+    font-size: 16px;
+}
+
+.promo__number-input::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.promo__steps-list {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+    gap: 10px;
+}
+
+.promo__step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 76px;
+    min-height: 76px;
+
+
+    border: 2px solid rgba(57, 64, 76, 1);
+    border-radius: 100vw;
+    margin: 0;
+
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 5vw, 40px);
+    color: var(--sky-color);
+
+}
+
+.promo__item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .offer {
+        align-items: center;
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 425px) {}

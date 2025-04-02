@@ -10,6 +10,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/header.css">
+  <link rel="stylesheet" href="/src/styles/offer.css">
+  <link rel="stylesheet" href="/src/styles/tariff.css">
+  <link rel="stylesheet" href="/src/styles/tariff.css">
+  <link rel="stylesheet" href="/src/styles/promo.css">
+  <link rel="stylesheet" href="/src/styles/website.css">
+  <link rel="stylesheet" href="/src/styles/footer.css">
+
+
+
+
+
+
+
 </head>
 
 
@@ -20,7 +35,7 @@
   <div class="header__location">
     <img src="/header/Location.svg" alt="">
     <!-- исрпавить доступность -->
-    <button aria-label="Выбрать город" class="header__location-button" id="change-location-button">
+    <button aria-label="Открыть окно выбора города" class="header__location-button" id="change-location-button">
       <span id="selected-city">Ростов-на-Дону</span>
     </button>
 
@@ -177,7 +192,8 @@
 
 
 
-    <!-- CITY MODAK -->
+
+    <!-- CITY MODAL -->
     <template id="city-modal-template">
       <dialog id="change-location-modal" class="change-location-modal">
         <div class="change-location-modal__main-info">
@@ -188,13 +204,37 @@
     </template>
 
     <!--  -->
-
-
   </main>
 
-  <footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__social">
+        <img src="/footer/Twitter.svg" alt="" loading="lazy">
+        <img src="/footer/VK.svg" alt="" loading="lazy">
+        <img src="/footer/Facebook.svg" alt="" loading="lazy">
+      </div>
+
+      <div class="footer__terms">
+        <p class="footer__">Полные условия акции</p>
+        <img src="/footer/16.svg" alt="">
+      </div>
+    </div>
 
     <!-- разделительная полоска и два блока -->
+    <hr class="footer__line">
+
+    <div class="footer__container">
+      <div class="footer__lower-container">
+        <img src="/footer/Logo.svg" alt="Tele2">
+        <p class="footer__company">© Tele2 Россия, 2021</p>
+      </div>
+
+      <div class="footer__lower-container footer__lower-container_right">
+        <p class="footer__dev">Сделано в Студии Олега Чулакова</p>
+        <img src="/footer/chulakov.svg" alt="Студия Олега Чулакова">
+      </div>
+    </div>
 
   </footer>
 
