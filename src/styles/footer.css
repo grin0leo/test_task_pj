@@ -54,16 +54,20 @@
 }
 
 .footer__company {
-
     font-size: 13px;
 }
 
 
 @media (max-width: 768px) {}
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
 
     .footer__lower-container_right {
         display: none;
+    }
+
+    .footer__container_mobile {
+        display: flex;
+        justify-content: center;
     }
 }

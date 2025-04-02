@@ -60,4 +60,8 @@ header {
     }
 }
 
-@media (max-width: 425px) {}
+@media (max-width: 425px) {
+    .header__location {
+        min-width: 0;
+    }
+}
