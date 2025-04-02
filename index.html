@@ -129,8 +129,11 @@
     <section class="promo" id="form-section">
       <form class="promo__number-form" id="promo-form">
         <h1 class="promo__label">Несколько шагов <span class="promo__label_accent">и 1 ТБ — ваш</span></h1>
-        <label for="phone" class="promo__phone-label">Номер телефона</label>
-        <input type="tel" name="phone" id="phone" class="promo__number-input" placeholder="+7 (___) ___-__-__" required>
+        <div class="promo__input-group">
+          <label for="phone" class="promo__phone-label">Номер телефона</label>
+          <input type="tel" name="phone" id="phone" class="promo__number-input" placeholder="+7 (___) ___-__-__"
+            required>
+        </div>
 
         <label class="promo__checkbox">
           <input type="checkbox" class="promo__checkbox-input" required>
@@ -153,6 +156,13 @@
             <img src="/promo/statusError.svg" alt="Ошибка:">
             <span>На один и тот же номер можно отправить только один промокод</span>
           </div>
+
+          <div class="promo__message promo__error-message" id="promo-error-message-valid" role="status"
+            aria-live="polite" hidden>
+            <img src="/promo/statusError.svg" alt="Ошибка:">
+            <span>Номер введен некорректно</span>
+          </div>
+
         </label>
         <button class='base-button promo__button' type="submit">Выслать промокод</button>
       </form>

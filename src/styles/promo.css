@@ -89,16 +89,37 @@
     border-bottom: 1px solid var(--gray-color);
     padding-right: 5%;
     font-size: 16px;
+    transition: all 0.3s ease;
 }
+
 
 .promo__number-input:focus {
     outline: none;
+    border-bottom-color: var(--sky-color);
 }
+
+.promo__input-group:focus-within .promo__phone-label {
+    color: var(--sky-color);
+    transition: color 0.3s ease;
+}
+
 
 .promo__number-input::placeholder {
     color: white;
     opacity: 1;
 }
+
+/* .promo__number-input_success {
+    border-bottom-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.promo__number-input_error {
+    border-bottom-color: var(--error-color);
+    color: var(--error-color);
+    animation: shake 0.5s ease-in-out;
+
+} */
 
 .promo__steps-list {
     display: flex;

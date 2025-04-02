@@ -2,16 +2,17 @@ import { phoneMask } from "./maskNumber.js";
 import { isValidPhoneNumber } from "./validationNumber.js";
 
 
-//TODO добавить ошибку валидации 
 export function setupFormHandler() {
     const phoneInput = document.getElementById("phone");
     const form = document.getElementById("promo-form");
     const message = document.getElementById("promo-success-message");
     const errorMessage = document.getElementById("promo-error-message");
+    const errorMessageValid = document.getElementById("promo-error-message-valid");
 
 
     message.style.display = "none";
     errorMessage.style.display = "none";
+    errorMessageValid.style.display = "none";
 
     phoneMask(phoneInput);
 
@@ -30,23 +31,26 @@ export function setupFormHandler() {
 
         // проверка на валидацию 
         if (!isValidPhoneNumber(phoneInput.value)) {
-            phoneInput.classList.add("error");
-            errorMessage.style.display = "flex";
+            errorMessage.style.display = "none";
+            errorMessageValid.style.display = "flex";
             message.style.display = "none";
+
+            validationTimer = setTimeout(() => {
+                errorMessageValid.style.display = "none";
+            }, 3000);
+
             return;
         }
 
-        phoneInput.classList.remove("error");
-        phoneInput.classList.add("success");
 
         // проверяю, есть ли этот номер в localStorage
         const usedPhoneNumbers = JSON.parse(localStorage.getItem("usedPhoneNumbers")) || [];
 
         if (usedPhoneNumbers.includes(phoneNumber)) {
-            phoneInput.classList.add("error");
             errorMessage.style.display = "flex";
             message.style.display = "none";
 
+            phoneInput.value = "";
             errorTimer = setTimeout(() => {
                 errorMessage.style.display = "none";
             }, 3000);
